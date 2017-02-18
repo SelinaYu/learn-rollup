@@ -13,12 +13,15 @@ import nested from 'postcss-nested';
 import cssnext from 'postcss-cssnext';
 import cssnano from 'cssnano';
 
+import livereload from 'rollup-plugin-livereload';
+
 export default {
   entry: 'src/scripts/main.js',
   dest: 'build/js/main.min.js',
   format: 'iife',
   sourceMap: 'inline',
   plugins: [
+    livereload(),
     postcss({
       plugins: [
         simplevars(),
